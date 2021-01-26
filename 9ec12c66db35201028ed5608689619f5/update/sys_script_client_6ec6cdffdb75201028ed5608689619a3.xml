@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Defina o solicitante como o usuário atualmente conectado para novos registros de item de desejo. Os usuários podem alterar o valor do campo.</description>
+        <field>sys_created_on</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Solicitante do conjunto de itens de dese</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	
+	//Verifique se o formulário é para um novo registro. Se for um novo recorde,
+	//defina o valor do solicitante para o usuário atualmente conectado.
+	
+	if(g_form.isNewRecord()){
+		g_form.setValue('requester',g_user.userID);
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-01-25 23:59:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6ec6cdffdb75201028ed5608689619a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Solicitante do conjunto de itens de dese</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Lista de desejos" source="x_564154_lista">9ec12c66db35201028ed5608689619f5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Lista de desejos">9ec12c66db35201028ed5608689619f5</sys_scope>
+        <sys_update_name>sys_script_client_6ec6cdffdb75201028ed5608689619a3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-01-25 23:59:13</sys_updated_on>
+        <table>x_564154_lista_item_desejo</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
